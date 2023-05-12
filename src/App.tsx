@@ -1,17 +1,19 @@
 /* eslint-disable linebreak-style */
 import { BrowserRouter } from 'react-router-dom';
 import { AppRoutes } from './routes';
-import { AppThemeProvider } from './shared/contexts';
+import { AppThemeProvider, DrawerProvider } from './shared/contexts';
 import { MenuLateral } from './shared/components';
 
 export const App = () => {
   return (
     <AppThemeProvider>
-      <BrowserRouter>
-        <MenuLateral>
-          <AppRoutes />
-        </MenuLateral>
-      </BrowserRouter>
+      <DrawerProvider>
+        <BrowserRouter>
+          <MenuLateral>
+            <AppRoutes />
+          </MenuLateral>
+        </BrowserRouter>
+      </DrawerProvider>
     </AppThemeProvider>
   );
 };
