@@ -5,7 +5,7 @@ interface IDrawerContextData {
   toggleDrawerOpen: () => void;
 }
 
-interface DrawerProviderProps {
+interface IDrawerProviderProps {
   children: React.ReactNode;
 }
 
@@ -15,7 +15,7 @@ export const useDrawerContext = () => {
   return useContext(DrawerContext);
 };
 
-export const DrawerProvider: React.FC<DrawerProviderProps> = ({ children }) => {
+export const DrawerProvider: React.FC<IDrawerProviderProps> = ({ children }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawerOpen = useCallback(() => {
