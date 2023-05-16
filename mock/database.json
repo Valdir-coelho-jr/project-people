@@ -2,8 +2,9 @@
   "pessoas": [
     {
       "id": 1,
-      "nome": "Rogério",
-      "sobrenome": "PIGATTO"
+      "email": "lucianus@lineage.com",
+      "cidadeId": "Revolution 2",
+      "nomeCompleto": "Lucianos"
     }
   ]
 }
