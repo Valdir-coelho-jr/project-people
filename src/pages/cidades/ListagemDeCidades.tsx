@@ -1,10 +1,17 @@
+import { useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import { FerramentasDeListagem } from "../../shared/components";
 import { LayoutBaseDePagina } from "../../shared/layouts";
+import { text } from "stream/consumers";
 
 export const ListagemDeCidades: React.FC = () => {
-  const [] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const busca = useMemo(() => {
+    return searchParams.get("busca") || "";
+  }, [searchParams]);
+
   return (
     <LayoutBaseDePagina
       titulo="Listagem de Cidades"
@@ -12,8 +19,8 @@ export const ListagemDeCidades: React.FC = () => {
         <FerramentasDeListagem
           mostrarInputBusca
           textoBotaoNovo="Nova Cidade"
-          textoDaBusca="Teste"
-          aoMudarTextoDeBusca={(texto) => console.log(texto)}
+          textoDaBusca={searchParams.get("busca") ?? ""}
+          aoMudarTextoDeBusca={(texto) => setSearchParams({ busca: texto }, { replace: true })}
         ></FerramentasDeListagem>
       }
     ></LayoutBaseDePagina>
