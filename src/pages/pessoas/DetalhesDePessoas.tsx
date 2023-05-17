@@ -39,16 +39,32 @@ export const DetalhesDePessoas: React.FC = () => {
           navigate("/pessoas");
         } else {
           setNome(result.nomeCompleto);
-          console.log(result);
+
+          formRef.current?.setData(result);
         }
       });
     }
   }, [id]);
 
   const handleSave = (dados: IFormData) => {
+    setIsLoading(true);
     if (id === "nova-pessoa") {
-      pessoaServices.create(dados);
+      pessoaServices.create(dados).then((result) => {
+        setIsLoading(false);
+        if (result instanceof Error) {
+          alert(result.message);
+        } else {
+          navigate(`/pessoas/detalhes/${result}`);
+        }
+      });
     } else {
+      pessoaServices.updateById(Number(id), { id: Number(id), ...dados }).then((result) => {
+        setIsLoading(false);
+        if (result instanceof Error) {
+          alert(result.message);
+        } else {
+        }
+      });
     }
   };
 

@@ -37,12 +37,6 @@
       "nomeCompleto": "Vee3rzinho"
     },
     {
-      "id": 14,
-      "email": "lu3ianus@lineage.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Luc3ianos"
-    },
-    {
       "id": 15,
       "email": "rog3ério@superpc.com",
       "cidadeId": 1,
@@ -59,6 +53,12 @@
       "email": "veer4zinho_in_the_flux@reybael.angel.com",
       "cidadeId": 1,
       "nomeCompleto": "Vee4rzinho"
+    },
+    {
+      "id": 18,
+      "nomeCompleto": "JOAOZAO NERVOSO",
+      "email": "joaozinho@email.com",
+      "cidadeId": "04"
     }
   ]
 }
