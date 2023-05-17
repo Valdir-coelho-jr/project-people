@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-globals */
 import {
   Paper,
   Table,
@@ -9,11 +10,13 @@ import {
   TableRow,
   LinearProgress,
   Pagination,
+  IconButton,
+  Icon,
 } from "@mui/material";
 
 import { useMemo, useEffect, useState } from "react";
 
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 import { FerramentasDeListagem } from "../../shared/components";
 import { LayoutBaseDePagina } from "../../shared/layouts";
@@ -24,6 +27,7 @@ import { Environment } from "../../shared/environment";
 export const ListagemDePessoas: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const { debounce } = useDebouce();
+  const navigate = useNavigate();
 
   const [rows, setRows] = useState<IListagemPessoa[]>([]);
   const [totalCount, setTotalCount] = useState(0);
@@ -54,6 +58,21 @@ export const ListagemDePessoas: React.FC = () => {
     });
   }, [busca, pagina]);
 
+  const handleDelete = (id: number) => {
+    if (confirm("Realmente deseja apagar?")) {
+      pessoaServices.deleteById(id).then((result) => {
+        if (result instanceof Error) {
+          alert(result.message);
+        } else {
+          setRows((oldRows) => {
+            return [...oldRows.filter((oldRow) => oldRow.id !== id)];
+          });
+          alert("Registro apagado com sucesso!");
+        }
+      });
+    }
+  };
+
   return (
     <LayoutBaseDePagina
       titulo="Listagem de Pessoas"
@@ -72,7 +91,9 @@ export const ListagemDePessoas: React.FC = () => {
         <Table>
           <TableHead>
             <TableRow>
-              <TableCell>Ações</TableCell>
+              <TableCell>
+                <TableCell>Ações</TableCell>
+              </TableCell>
               <TableCell>Nome completo</TableCell>
               <TableCell>Email</TableCell>
             </TableRow>
@@ -80,7 +101,14 @@ export const ListagemDePessoas: React.FC = () => {
           <TableBody>
             {rows.map((row) => (
               <TableRow key={row.id}>
-                <TableCell>Ações</TableCell>
+                <TableCell size="small">
+                  <IconButton size="small">
+                    <Icon onClick={() => handleDelete(row.id)}>delete</Icon>
+                  </IconButton>
+                  <IconButton size="small">
+                    <Icon onClick={() => navigate(`/pessoas/detalhes/${row.id}`)}>edit</Icon>
+                  </IconButton>
+                </TableCell>
                 <TableCell>{row.nomeCompleto}</TableCell>
                 <TableCell>{row.email}</TableCell>
               </TableRow>

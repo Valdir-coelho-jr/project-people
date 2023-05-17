@@ -1,36 +1,6 @@
 {
   "pessoas": [
     {
-      "id": 1,
-      "email": "lucianus@lineage.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Lucianos"
-    },
-    {
-      "id": 2,
-      "email": "rogério@superpc.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Rogério"
-    },
-    {
-      "id": 3,
-      "email": "japinha@pastel.com",
-      "cidadeId": 1,
-      "nomeCompleto": "JAPINHA"
-    },
-    {
-      "id": 4,
-      "email": "veerzinho_in_the_flux@reybael.angel.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Veerzinho"
-    },
-    {
-      "id": 5,
-      "email": "yenny_coin@xorume.com",
-      "cidadeId": 1,
-      "nomeCompleto": "Véio Fudido"
-    },
-    {
       "id": 6,
       "email": "2lucianus@lineage.com",
       "cidadeId": 1,
