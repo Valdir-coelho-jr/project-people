@@ -84,6 +84,7 @@ export const ListagemDePessoas: React.FC = () => {
           aoMudarTextoDeBusca={(texto) =>
             setSearchParams({ busca: texto, pagina: "1" }, { replace: true })
           }
+          AoClicarEmNovo={() => navigate("/pessoas/detalhes/nova-pessoa")}
         />
       }
     >
