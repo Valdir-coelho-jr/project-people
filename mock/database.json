@@ -2,21 +2,21 @@
   "pessoas": [
     {
       "id": 6,
+      "nomeCompleto": "2Lucianos",
       "email": "2lucianus@lineage.com",
-      "cidadeId": 1,
-      "nomeCompleto": "2Lucianos"
+      "cidadeId": 1
     },
     {
       "id": 9,
+      "nomeCompleto": "Veer Of Fluxo",
       "email": "2veerzinho_in_the_flux@reybael.angel.com",
-      "cidadeId": 1,
-      "nomeCompleto": "2Veerzinho"
+      "cidadeId": 1
     },
     {
       "id": 10,
+      "nomeCompleto": "Lucianus Lineage",
       "email": "l2ucianus@lineage.com",
-      "cidadeId": 1,
-      "nomeCompleto": "2Lucianos"
+      "cidadeId": 1
     },
     {
       "id": 11,
