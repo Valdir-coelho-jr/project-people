@@ -4,11 +4,30 @@ import { useRef, useCallback } from "react";
 export const useCustomForm = () => {
   const formRef = useRef<FormHandles>(null);
 
-  const handleSave = useCallback(() => {}, []);
-  const handleSaveAndNew = useCallback(() => {}, []);
-  const handleSaveAndClose = useCallback(() => {}, []);
-  const handleIsSaveAndNew = useCallback(() => {}, []);
-  const handleIsSaveAndClose = useCallback(() => {}, []);
+  const isSavingAndNew = useRef(false);
+  const isSavingAndClose = useRef(false);
+
+  const handleSave = useCallback(() => {
+    isSavingAndClose.current = false;
+    isSavingAndNew.current = false;
+    formRef.current?.submitForm();
+  }, []);
+  const handleSaveAndNew = useCallback(() => {
+    isSavingAndClose.current = false;
+    isSavingAndNew.current = true;
+    formRef.current?.submitForm();
+  }, []);
+  const handleSaveAndClose = useCallback(() => {
+    isSavingAndClose.current = true;
+    isSavingAndNew.current = false;
+    formRef.current?.submitForm();
+  }, []);
+  const handleIsSaveAndNew = useCallback(() => {
+    return isSavingAndNew.current;
+  }, []);
+  const handleIsSaveAndClose = useCallback(() => {
+    return isSavingAndClose.current;
+  }, []);
 
   return {
     formRef,
