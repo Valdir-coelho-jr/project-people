@@ -9,7 +9,7 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["linebreak"],
+  "cSpell.words": ["linebreak", "opcoes"],
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   } // set as "true" to run 'prettier' last not first
