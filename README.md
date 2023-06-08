@@ -1,4 +1,4 @@
-<h1>Project People - Controle de Cadastros</h1>
+![project_people_thumbnail](https://github.com/Valdir-coelho-jr/project-people/assets/118737424/b48d794c-0d11-4647-861b-77c5a691c128)
 
 > Status: Versão atual completa. (Pode haver melhorias e implementações Futuras)
 ### Este é um projeto de controle de registros com pessoas e cidades, vinculando ambos.
@@ -20,6 +20,9 @@
     <td>1.2.0</td>
   </tr>
 </table
+  
+# Video demonstrativo do projeto funcionando
+  https://github.com/Valdir-coelho-jr/project-people/assets/118737424/201dfdf2-cf29-4197-b1cd-c830a2faf4c8
 
 ## Como rodar o projeto:
   1) Abra o projeto em um editor de código (Recomendo o VSCode)
